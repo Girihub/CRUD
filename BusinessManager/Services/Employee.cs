@@ -30,12 +30,7 @@ namespace BusinessManager.Services
 
         public IList<EmployeeModel> DisplayEmployee()
         {
-            throw new NotImplementedException();
-        }
-
-        public string GetEmployee(int id)
-        {
-            throw new NotImplementedException();
+            return _repository.DisplayEmployees();
         }
 
         public bool UpdateEmployee(int id, EmployeeModel employeeModel)

@@ -65,13 +65,36 @@ namespace EmployeeRepository.Services
 
         public IList<EmployeeModel> DisplayEmployees()
         {
-            throw new NotImplementedException();
-        }
+            SqlCommand sqlCommand = new SqlCommand("spEmployeeDisplay", sqlConnection);
+            List<EmployeeModel> employeeModel = new List<EmployeeModel>();
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
 
-        public string GetEmployee(int id)
-        {
-            throw new NotImplementedException();
-        }
+                while (dataReader.Read())
+                {
+                    employeeModel.Add(new EmployeeModel
+                    {                        
+                        FirstName = dataReader["FirstName"].ToString(),
+                        LastName = dataReader["LastName"].ToString(),
+                        EmpAddress = dataReader["EmpAddress"].ToString(),
+                        MobileNumber = Convert.ToInt32(dataReader["MobileNumber"]),
+                        ZipCode = Convert.ToInt32(dataReader["ZipCode"])
+                    });
+                }
+                return employeeModel;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }            
+        }        
 
         public bool UpdateEmployee(int id, EmployeeModel employeeModel)
         {

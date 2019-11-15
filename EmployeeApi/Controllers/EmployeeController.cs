@@ -21,22 +21,31 @@ namespace EmployeeApi.Controllers
         }
 
         [HttpPost]
-        public bool AddEmployee(EmployeeModel employeeModel)
+        public IActionResult AddEmployee(EmployeeModel employeeModel)
         {
-            return _employee.AddEmployee(employeeModel);
+            var result = _employee.AddEmployee(employeeModel);
+            return Ok(new { result });
              
         }
 
         [HttpPut]
-        public bool UpdateEmployee(int id, EmployeeModel employeeModel)
+        public IActionResult UpdateEmployee(int id, EmployeeModel employeeModel)
         {
-            return _employee.UpdateEmployee(id, employeeModel);
+            var result = _employee.UpdateEmployee(id, employeeModel);
+            return Ok(new { result });
         }
 
         [HttpDelete]
-        public bool DeleteEmployee(int id)
+        public IActionResult DeleteEmployee(int id)
         {
-            return _employee.DeleteEmployee(id);
+            var result = _employee.DeleteEmployee(id);
+            return Ok(new { result });
+        }
+
+        [HttpGet]
+        public IList<EmployeeModel> DisplayEmployees()
+        {
+            return _employee.DisplayEmployee();
         }
     }
 }

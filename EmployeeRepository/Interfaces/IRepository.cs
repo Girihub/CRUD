@@ -11,6 +11,5 @@ namespace EmployeeRepository.Interfaces
         bool DeleteEmployee(int id);
         bool UpdateEmployee(int id, EmployeeModel employeeModel);
         IList<EmployeeModel> DisplayEmployees();
-        string GetEmployee(int id);
     }
 }

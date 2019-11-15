@@ -15,7 +15,5 @@ namespace BusinessManager.Interfaces
         IList<EmployeeModel> DisplayEmployee();
 
         bool UpdateEmployee(int id, EmployeeModel employeeModel);
-
-        string GetEmployee(int id);
     }
 }
