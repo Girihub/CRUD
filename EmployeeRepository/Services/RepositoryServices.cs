@@ -80,8 +80,8 @@ namespace EmployeeRepository.Services
                         FirstName = dataReader["FirstName"].ToString(),
                         LastName = dataReader["LastName"].ToString(),
                         EmpAddress = dataReader["EmpAddress"].ToString(),
-                        MobileNumber = Convert.ToInt32(dataReader["MobileNumber"]),
-                        ZipCode = Convert.ToInt32(dataReader["ZipCode"])
+                        MobileNumber = dataReader["MobileNumber"].ToString(),
+                        ZipCode = dataReader["ZipCode"].ToString()
                     });
                 }
                 return employeeModel;
