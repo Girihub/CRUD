@@ -1,0 +1,25 @@
+﻿body {
+    background-color:aqua;
+}
+
+table{
+    border: 1px solid;
+}
+#main table tr td {
+    align-content:center;
+    text-align:center;
+}
+
+#main {
+    background-color: white;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sub {
+    text-align:center;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}

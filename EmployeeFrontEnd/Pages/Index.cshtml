@@ -1,0 +1,70 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="~/css/Index.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="main">
+        <table width="700" border="2" cellpadding="5" cellspacing="5">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Address</td>
+                <td>Mobile Number</td>
+                <td>Zip Code</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </table>
+    </div>
+    <br /><hr /><br/>
+
+    <div id="sub">
+        <form name="form" runat="server">
+            <table align="center"width="400"border="1">
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Zip Code:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                <td colspan="2"><input type="submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
