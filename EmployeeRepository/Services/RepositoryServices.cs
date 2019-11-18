@@ -38,6 +38,7 @@ namespace EmployeeRepository.Services
             SqlCommand sqlCommand = new SqlCommand("spEmployeeCreate", this.sqlConnection);
             try
             {
+                //// Open the connection
                 this.sqlConnection.Open();
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@FirstName", employeeModel.FirstName));
@@ -54,6 +55,7 @@ namespace EmployeeRepository.Services
             }
             finally
             {
+                //// Close the connection
                 this.sqlConnection.Close();
             }
 
@@ -70,6 +72,7 @@ namespace EmployeeRepository.Services
             SqlCommand sqlCommand = new SqlCommand("spEmployeeDelete", this.sqlConnection);
             try
             {
+                //// Open the connection
                 this.sqlConnection.Open();
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add(new SqlParameter("@Id", id));
@@ -82,6 +85,7 @@ namespace EmployeeRepository.Services
             }
             finally
             {
+                //// Close the connection
                 this.sqlConnection.Close();
             }
 
@@ -98,6 +102,7 @@ namespace EmployeeRepository.Services
             List<EmployeeModel> employeeModel = new List<EmployeeModel>();
             try
             {
+                //// Open the connection
                 this.sqlConnection.Open();
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dataReader = sqlCommand.ExecuteReader();
@@ -122,6 +127,7 @@ namespace EmployeeRepository.Services
             }
             finally
             {
+                //// Close the connection
                 this.sqlConnection.Close();
             }            
         }
@@ -137,7 +143,8 @@ namespace EmployeeRepository.Services
             try
             {
                 IList<EmployeeModel> list = new List<EmployeeModel>();
-               
+
+                //// Open the connection
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@Id", id);
                 this.sqlConnection.Open();
@@ -165,6 +172,7 @@ namespace EmployeeRepository.Services
             }
             finally
             {
+                //// Close the connection
                 this.sqlConnection.Close();
             }
         }
@@ -181,6 +189,8 @@ namespace EmployeeRepository.Services
             try
             {
                 sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                //// Open the connection
                 this.sqlConnection.Open();
                 sqlCommand.Parameters.Add(new SqlParameter("@Id", id));
                 sqlCommand.Parameters.Add(new SqlParameter("@FirstName", employeeModel.FirstName));
@@ -196,6 +206,7 @@ namespace EmployeeRepository.Services
             }
             finally
             {
+                //// Close the connection
                 this.sqlConnection.Close();
             }
 
